@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "es6",
     "module": "esnext",
-    "lib": ["dom", "esnext", "scripthost"],
     "importHelpers": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -11,7 +10,6 @@
     "noImplicitAny": false,
     "removeComments": false,
     "allowJs": true,
-    "baseUrl": "./",
     "noEmit": true,
     "downlevelIteration": true,
     "jsx": "react",
@@ -19,10 +17,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
+    "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
+      "@hooks/*": ["src/hooks"],
       "@utils/*": ["src/utils/*"],
+      "@services/*": ["src/services/*"],
       "@routes": ["src/routes"]
     }
   },
