@@ -1,26 +1,30 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "target": "es6",
     "module": "esnext",
+    "lib": ["dom", "esnext", "scripthost"],
+    "importHelpers": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "allowJs": true,
+    "baseUrl": "./",
     "noEmit": true,
-    "jsx": "react-jsx"
+    "downlevelIteration": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@utils/*": ["src/utils/*"],
+      "@routes": ["src/routes"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules", "build"]
 }
