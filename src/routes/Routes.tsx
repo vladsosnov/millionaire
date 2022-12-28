@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Main, Game, Result } from 'src/pages';
 import { routes } from './appRoutes';
 
-const AppRoutes = () => {
+export const AppRoutes = () => {
   return (
     <Routes>
       <Route path={routes.main.path} element={<Main />} />
@@ -13,5 +13,3 @@ const AppRoutes = () => {
     </Routes>
   );
 };
-
-export default AppRoutes;
