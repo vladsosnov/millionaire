@@ -1,6 +1,14 @@
+import axios from 'axios';
+
 class Service {
-  getQuestions() {
-    console.log('questions');
+  async getQuestions() {
+    try {
+      const questions = await axios.get('./__mocks__/questions.json');
+
+      return questions.data;
+    } catch (err) {
+      return err;
+    }
   }
 }
 

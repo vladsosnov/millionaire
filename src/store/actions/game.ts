@@ -5,6 +5,7 @@ export const GameActions = {
   getQuestions: () => async (dispatch: AppDispatch) => {
     try {
       const response = await GameService.getQuestions();
+
       dispatch({
         type: 'INIT_QUESTIONS',
         payload: response,

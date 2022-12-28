@@ -1,9 +1,9 @@
 import React from 'react';
 import { HexagonIcon } from 'src/design-system/icons';
-import { QuizAnswerProps } from './QuizAnswer.types';
-import './quizAnswer.css';
+import { QuizAnswerCheckboxProps } from './QuizAnswerCheckbox.types';
+import './quizAnswerCheckbox.css';
 
-export const QuizAnswer: React.FC<QuizAnswerProps> = ({
+export const QuizAnswerCheckbox: React.FC<QuizAnswerCheckboxProps> = ({
   label,
   checked,
   disabled,

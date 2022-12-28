@@ -16,7 +16,7 @@
                 "id": 0, "label": 22, "isCorrect": true
             }
         ],
-        "score": "500",
+        "score": 500,
         "isMultipleAnswers": false
     },
     {
@@ -36,7 +36,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "1000",
+        "score": 1000,
         "isMultipleAnswers": false
     },
     {
@@ -56,7 +56,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "2000",
+        "score": 2000,
         "isMultipleAnswers": false
     },
     {
@@ -76,7 +76,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "4000",
+        "score": 4000,
         "isMultipleAnswers": false
     },
     {
@@ -96,7 +96,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "8000",
+        "score": 8000,
         "isMultipleAnswers": false
     },
     {
@@ -116,7 +116,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "16000",
+        "score": 16000,
         "isMultipleAnswers": false
     },
     {
@@ -136,7 +136,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "32000",
+        "score": 32000,
         "isMultipleAnswers": false
     },
     {
@@ -156,7 +156,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "64000",
+        "score": 64000,
         "isMultipleAnswers": false
     },
     {
@@ -176,7 +176,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "125000",
+        "score": 125000,
         "isMultipleAnswers": false
     },
     {
@@ -196,7 +196,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "250000",
+        "score": 250000,
         "isMultipleAnswers": false
     },
     {
@@ -216,7 +216,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "500000",
+        "score": 500000,
         "isMultipleAnswers": false
     },
     {
@@ -236,7 +236,7 @@
                 "id": 0, "label": 5, "isCorrect": true
             }
         ],
-        "score": "1000000",
+        "score": 1000000,
         "isMultipleAnswers": false
     }
 ]
