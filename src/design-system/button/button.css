@@ -1,0 +1,26 @@
+.button {
+  display: flex;
+  cursor: pointer;
+}
+
+.button-small {
+  padding: 16px 24px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.button--medium {
+  padding: 21px 24px;
+  font-size: 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  line-height: 116%;
+}
+
+.button--primary {
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange-color);
+  color: var(--white-color);
+}
+
