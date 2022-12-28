@@ -3,8 +3,9 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-image: linear-gradient(to top left, var(--light-gray-color) 100%);
 }
 
 .default-layout--gradient {
-  background-image: linear-gradient(to top left, #FFF3EB 50%, #fff 50%);
+  background-image: linear-gradient(to top left, var(--light-orange-color) 50%, var(--white-color) 50%);
 }
