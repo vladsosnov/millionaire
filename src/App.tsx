@@ -1,8 +1,6 @@
-import { useActions } from 'src/hooks/useActions';
 import React from 'react';
+import AppRoutes from './routes/Routes';
 
 export const App = () => {
-  const { getQuestions } = useActions();
-
-  return <div onClick={() => getQuestions()}>App</div>;
+  return <AppRoutes />;
 };
