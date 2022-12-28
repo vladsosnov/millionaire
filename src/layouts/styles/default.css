@@ -1,0 +1,10 @@
+.default-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.default-layout--gradient {
+  background-image: linear-gradient(to top left, #FFF3EB 50%, #fff 50%);
+}

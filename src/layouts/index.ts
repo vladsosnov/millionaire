@@ -1,2 +1,2 @@
-export * from './Default';
-export * from './Quiz';
+export * from './DefaultLayout';
+export * from './QuizLayout';
