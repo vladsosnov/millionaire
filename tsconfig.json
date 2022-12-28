@@ -20,11 +20,12 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
       "@pages/*": ["src/pages/*"],
       "@hooks/*": ["src/hooks"],
       "@utils/*": ["src/utils/*"],
       "@services/*": ["src/services/*"],
-      "@routes": ["src/routes"]
+      "@routes/*": ["src/routes"]
     }
   },
   "exclude": ["node_modules", "build"]
