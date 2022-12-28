@@ -1,0 +1,84 @@
+.answer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+}
+  
+.answer__rectangle {
+  position: relative;
+  fill: var(--white-color);
+  stroke: var(--grey-color);
+}
+  
+.answer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0%;
+  background-color: var(--grey-color);
+}
+  
+.answer:hover .answer__rectangle {
+  stroke: var(--orange-color);
+}
+
+.answer:hover::before, 
+.answer:hover::after {
+  background-color: var(--orange-color);
+}
+
+.answer__checkbox + .answer__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--dark-color);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 116%;
+  z-index: 2;
+}
+
+.answer__checkbox:checked ~ .answer__rectangle {
+  fill: var(--light-orange-color);
+}
+
+.answer__respond {
+  color: var(--carrot-color);
+  margin-right: 8px;
+}
+
+.answer--correct .answer__checkbox ~ .answer__rectangle {
+  stroke: var(--green-color);
+  fill: var(--light-green-color);
+}
+
+.answer--correct::before,
+.answer--correct::after {
+  background-color: var(--green-color) !important;
+}
+
+.answer--wrong .answer__checkbox ~ .answer__rectangle {
+  stroke: var(--red-color);
+  fill: var(--light-red-color);
+}
+
+.answer--wrong::before,
+.answer--wrong::after {
+  background-color: var(--red-color) !important;
+}
+
+.answer--selected .answer__checkbox ~ .answer__rectangle {
+  stroke: var(--orange-color);
+  fill: var(--light-orange-color);
+}
+
+.answer--selected::before,
+.answer--selected::after {
+  background-color: var(--orange-color) !important;
+}

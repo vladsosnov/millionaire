@@ -1,0 +1,12 @@
+.quiz-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.quiz-layout__content {
+  flex: 3;
+}
+
+.quiz-layout__aside {
+  flex: 1;
+}
