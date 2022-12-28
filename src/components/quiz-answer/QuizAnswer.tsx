@@ -1,7 +1,8 @@
 import React from 'react';
+import { Question } from 'src/types/game';
 
 interface QuizAnswerProps {
-  question: any;
+  question: Question;
 }
 
 export const QuizAnswer: React.FC<QuizAnswerProps> = ({ question }) => {

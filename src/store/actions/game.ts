@@ -1,10 +1,11 @@
 import { GameService } from 'src/services/game';
+import { Question } from 'src/types/game';
 import { AppDispatch } from '..';
 
 export const GameActions = {
   getQuestions: () => async (dispatch: AppDispatch) => {
     try {
-      const response = await GameService.getQuestions();
+      const response: Question[] = await GameService.getQuestions();
 
       dispatch({
         type: 'INIT_QUESTIONS',

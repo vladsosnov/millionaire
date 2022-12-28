@@ -1,3 +1,5 @@
+import { Question } from 'src/types/game';
+
 export type GameActionEnum =
   | 'INIT_QUESTIONS'
   | 'INIT_QUESTIONS_FAIL'
@@ -6,7 +8,7 @@ export type GameActionEnum =
 
 export interface InitQuestionsAction {
   type: 'INIT_QUESTIONS';
-  payload: any;
+  payload: Question[];
 }
 
 export interface InitQuestionsFailAction {
