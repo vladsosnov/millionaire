@@ -2,6 +2,7 @@ import type { GameAction } from './types';
 
 const initialState = {
   activeStep: 0,
+  isFinished: false,
   questions: null,
 };
 
@@ -24,12 +25,13 @@ export const gameReducer = (state = initialState, action: GameAction) => {
     case 'ANSWER_WRONG':
       return {
         ...state,
-        activeStep: null,
+        isFinished: true,
       };
 
     case 'RESET_GAME':
       return {
         ...state,
+        isFinished: false,
         activeStep: 0,
       };
 

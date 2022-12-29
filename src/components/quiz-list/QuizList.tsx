@@ -7,9 +7,10 @@ import { Answer } from 'src/types/game';
 export const QuizList = () => {
   const navigate = useNavigate();
   const { checkAnswer } = useActions();
-  const { questions, activeStep } = useTypedSelector(store => store.game);
-  const isGameFinished =
-    activeStep === null || activeStep === questions?.length;
+  const { questions, isFinished, activeStep } = useTypedSelector(
+    store => store.game,
+  );
+  const isGameFinished = isFinished || activeStep === questions?.length;
 
   React.useEffect(() => {
     if (isGameFinished) navigate('/result');

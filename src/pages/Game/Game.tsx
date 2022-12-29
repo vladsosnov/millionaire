@@ -3,7 +3,6 @@ import { useActions } from 'src/hooks/useActions';
 import { QuizList } from 'src/components/quiz-list';
 import { QuizAside } from 'src/components/quiz-aside';
 import { QuizLayout } from 'src/layouts';
-import './game.css';
 
 export const Game = () => {
   const { getQuestions } = useActions();
