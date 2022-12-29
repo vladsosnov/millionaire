@@ -1,3 +1,5 @@
+import { Answer } from 'src/types/game';
+
 export type QuizAnswerCheckboxStatus =
   | 'default'
   | 'selected'
@@ -7,7 +9,7 @@ export type QuizAnswerCheckboxStatus =
 export interface QuizAnswerCheckboxProps {
   disabled: boolean;
   checked: boolean;
-  label: string;
+  answer: Answer;
   status: QuizAnswerCheckboxStatus;
-  onChange: (title: string) => void;
+  onChange: (label: string | number) => void;
 }

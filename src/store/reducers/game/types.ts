@@ -3,8 +3,9 @@ import { Question } from 'src/types/game';
 export type GameActionEnum =
   | 'INIT_QUESTIONS'
   | 'INIT_QUESTIONS_FAIL'
-  | 'ANSWER_SUCCESS'
-  | 'ANSWER_NOT_SUCCESS';
+  | 'ANSWER_CORRECT'
+  | 'ANSWER_WRONG'
+  | 'RESET_GAME';
 
 export interface InitQuestionsAction {
   type: 'INIT_QUESTIONS';
@@ -13,20 +14,26 @@ export interface InitQuestionsAction {
 
 export interface InitQuestionsFailAction {
   type: 'INIT_QUESTIONS_FAIL';
-  payload: any;
+  payload: null;
 }
-export interface AnswerSuccessAction {
-  type: 'ANSWER_SUCCESS';
-  payload: any;
+export interface AnswerCorrectAction {
+  type: 'ANSWER_CORRECT';
+  payload: null;
 }
 
-export interface AnswerNotSuccessAction {
-  type: 'ANSWER_NOT_SUCCESS';
-  payload: any;
+export interface AnswerWrongAction {
+  type: 'ANSWER_WRONG';
+  payload: null;
+}
+
+export interface ResetGameAction {
+  type: 'RESET_GAME';
+  payload: null;
 }
 
 export type GameAction =
   | InitQuestionsAction
   | InitQuestionsFailAction
-  | AnswerSuccessAction
-  | AnswerNotSuccessAction;
+  | AnswerCorrectAction
+  | AnswerWrongAction
+  | ResetGameAction;

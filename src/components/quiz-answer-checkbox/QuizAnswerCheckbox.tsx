@@ -4,7 +4,7 @@ import { QuizAnswerCheckboxProps } from './QuizAnswerCheckbox.types';
 import './quizAnswerCheckbox.css';
 
 export const QuizAnswerCheckbox: React.FC<QuizAnswerCheckboxProps> = ({
-  label,
+  answer,
   checked,
   disabled,
   status,
@@ -17,11 +17,11 @@ export const QuizAnswerCheckbox: React.FC<QuizAnswerCheckboxProps> = ({
         disabled={disabled}
         checked={checked}
         type="checkbox"
-        onChange={() => onChange(label)}
+        onChange={() => onChange(answer.label)}
       />
       <span className="answer__label">
         <span className="answer__respond">A</span>
-        {label}
+        {answer.label}
       </span>
       <HexagonIcon className="answer__rectangle" />
     </label>

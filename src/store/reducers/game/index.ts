@@ -2,7 +2,6 @@ import type { GameAction } from './types';
 
 const initialState = {
   activeStep: 0,
-  score: 0,
   questions: null,
 };
 
@@ -14,6 +13,24 @@ export const gameReducer = (state = initialState, action: GameAction) => {
       return {
         ...state,
         questions: payload,
+      };
+
+    case 'ANSWER_CORRECT':
+      return {
+        ...state,
+        activeStep: state.activeStep + 1,
+      };
+
+    case 'ANSWER_WRONG':
+      return {
+        ...state,
+        activeStep: null,
+      };
+
+    case 'RESET_GAME':
+      return {
+        ...state,
+        activeStep: 0,
       };
 
     default:

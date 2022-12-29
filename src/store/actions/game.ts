@@ -20,4 +20,24 @@ export const GameActions = {
       });
     }
   },
+
+  checkAnswer: (isCorrect: boolean) => (dispatch: AppDispatch) => {
+    if (isCorrect) {
+      return dispatch({
+        type: 'ANSWER_CORRECT',
+      });
+    }
+
+    dispatch({
+      type: 'ANSWER_WRONG',
+      payload: null,
+    });
+  },
+
+  resetGame: () => (dispatch: AppDispatch) => {
+    dispatch({
+      type: 'RESET_GAME',
+      payload: null,
+    });
+  },
 };

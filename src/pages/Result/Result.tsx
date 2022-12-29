@@ -4,15 +4,17 @@ import { Button } from 'src/design-system';
 import { Hand } from 'src/design-system/icons';
 import { DefaultLayout } from 'src/layouts';
 import { routes } from 'src/routes';
+import { useActions } from 'src/hooks';
 import './result.css';
 
 export const Result = () => {
   const navigate = useNavigate();
+  const { resetGame } = useActions();
 
-  const handleStartClick = React.useCallback(
-    () => navigate(routes.game.path),
-    [navigate],
-  );
+  const handleStartClick = React.useCallback(() => {
+    navigate(routes.main.path);
+    resetGame();
+  }, [navigate, resetGame]);
 
   return (
     <DefaultLayout>

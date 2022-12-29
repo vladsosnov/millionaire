@@ -1,9 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { QuizAnswer } from 'src/components/quiz-answer';
-import { useTypedSelector } from 'src/hooks';
+import { useActions, useTypedSelector } from 'src/hooks';
+import { Answer } from 'src/types/game';
 
 export const QuizList = () => {
-  const { questions } = useTypedSelector(store => store.game);
+  const navigate = useNavigate();
+  const { checkAnswer } = useActions();
+  const { questions, activeStep } = useTypedSelector(store => store.game);
+  const isGameFinished =
+    activeStep === null || activeStep === questions?.length;
+
+  React.useEffect(() => {
+    if (isGameFinished) navigate('/result');
+  }, [activeStep, isGameFinished, navigate]);
+
+  const handleAnswerSelection = React.useCallback(
+    (selectedAnswer: Answer) => {
+      checkAnswer(selectedAnswer.isCorrect);
+    },
+    [checkAnswer],
+  );
 
   if (!questions) {
     return <h1>Loading...</h1>;
@@ -11,9 +28,13 @@ export const QuizList = () => {
 
   return (
     <ul className="quiz-list">
-      {questions.map(question => (
-        <QuizAnswer key={question.id} question={question} />
-      ))}
+      {!isGameFinished && (
+        <QuizAnswer
+          activeStep={activeStep}
+          question={questions[activeStep]}
+          handleAnswerClick={handleAnswerSelection}
+        />
+      )}
     </ul>
   );
 };
