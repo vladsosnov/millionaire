@@ -1,21 +1,14 @@
 import React from 'react';
 
 interface HexagonProps {
-  width?: number;
-  height?: number;
   className?: string;
 }
 
-export const HexagonIcon: React.FC<HexagonProps> = ({
-  width = 390,
-  height = 72,
-  className,
-}) => {
+export const HexagonIcon: React.FC<HexagonProps> = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
+      viewBox="0 0 390 72"
       className={className}
       fill="#fff"
       stroke="#D0D0D8"

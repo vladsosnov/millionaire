@@ -17,7 +17,7 @@ export const Main = () => {
   return (
     <DefaultLayout withBackground>
       <div className="main-page">
-        <img src={Hand} alt="white hand" />
+        <img src={Hand} alt="white hand" className="main-page__image" />
         <div className="main-page__wrapper">
           <h1 className="main-page__title">Who wants to be a millionaire?</h1>
           <Button onClick={handleStartClick}>Start</Button>

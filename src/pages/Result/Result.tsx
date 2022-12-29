@@ -34,7 +34,7 @@ export const Result = () => {
   return (
     <DefaultLayout>
       <div className="result-page">
-        <img src={Hand} alt="white hand" />
+        <img src={Hand} alt="white hand" className="result-page__image" />
         <div className="result-page__wrapper">
           <h2 className="result-page__subtitle">Total score:</h2>
           <h1 className="result-page__title">${scores} earned</h1>
