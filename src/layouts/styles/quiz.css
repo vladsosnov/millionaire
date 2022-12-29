@@ -15,7 +15,8 @@
 .quiz-layout__aside {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column-reverse;
+  gap: 8px;
   flex: 1;
   background-color: var(--white-color);
 }
