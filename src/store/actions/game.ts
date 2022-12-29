@@ -40,4 +40,11 @@ export const GameActions = {
       payload: null,
     });
   },
+
+  finishGame: () => (dispatch: AppDispatch) => {
+    dispatch({
+      type: 'FINISH_GAME',
+      payload: null,
+    });
+  },
 };

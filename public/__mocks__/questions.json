@@ -16,7 +16,7 @@
         "isCorrect": false
       },
       {
-        "label": 22,
+        "label": "22 this is true",
         "isCorrect": true
       }
     ],
@@ -32,7 +32,7 @@
         "isCorrect": false
       },
       {
-        "label": 3,
+        "label": "this is true",
         "isCorrect": true
       },
       {
@@ -57,11 +57,11 @@
       },
       {
         "label": 3,
-        "isCorrect": true
+        "isCorrect": false
       },
       {
-        "label": 2,
-        "isCorrect": false
+        "label": "this is true",
+        "isCorrect": true
       },
       {
         "label": 5,
@@ -100,12 +100,12 @@
     "label": "How many friends do you have?",
     "answers": [
       {
-        "label": 1,
-        "isCorrect": false
+        "label": "this is true",
+        "isCorrect": true
       },
       {
         "label": 3,
-        "isCorrect": true
+        "isCorrect": false
       },
       {
         "label": 2,
@@ -129,11 +129,11 @@
       },
       {
         "label": 3,
-        "isCorrect": true
+        "isCorrect": false
       },
       {
-        "label": 2,
-        "isCorrect": false
+        "label": "this is true",
+        "isCorrect": true
       },
       {
         "label": 5,

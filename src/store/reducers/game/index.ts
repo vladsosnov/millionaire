@@ -28,6 +28,12 @@ export const gameReducer = (state = initialState, action: GameAction) => {
         isFinished: true,
       };
 
+    case 'FINISH_GAME':
+      return {
+        ...state,
+        isFinished: true,
+      };
+
     case 'RESET_GAME':
       return {
         ...state,

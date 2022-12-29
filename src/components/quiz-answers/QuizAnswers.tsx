@@ -12,16 +12,21 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
   question,
   handleAnswerClick,
 }) => {
+  const [disableCheckboxes, setDisableCheckboxes] = React.useState(false);
+
+  const handleDisableCheckboxes = () => {
+    setDisableCheckboxes(prev => !prev);
+  };
+
   return (
     <ul className="quiz-answers">
       {question.answers.map(answer => (
         <QuizAnswerCheckbox
           key={answer.label}
           answer={answer}
-          status="default"
-          disabled={false}
-          checked={false}
+          disabled={disableCheckboxes}
           onChange={() => handleAnswerClick(answer)}
+          disableCheckboxes={handleDisableCheckboxes}
         />
       ))}
     </ul>

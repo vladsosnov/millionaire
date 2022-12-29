@@ -53,6 +53,16 @@
   margin-right: 8px;
 }
 
+.answer--default .answer__checkbox ~ .answer__rectangle {
+  fill: var(--white-color);
+  stroke: var(--grey-color);
+}
+
+.answer--default::before,
+.answer--default::after {
+  background-color: var(--grey-color) !important;
+}
+
 .answer--correct .answer__checkbox ~ .answer__rectangle {
   stroke: var(--green-color);
   fill: var(--light-green-color);

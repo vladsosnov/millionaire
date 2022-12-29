@@ -8,8 +8,7 @@ export type QuizAnswerCheckboxStatus =
 
 export interface QuizAnswerCheckboxProps {
   disabled: boolean;
-  checked: boolean;
   answer: Answer;
-  status: QuizAnswerCheckboxStatus;
   onChange: (label: string | number) => void;
+  disableCheckboxes: () => void;
 }

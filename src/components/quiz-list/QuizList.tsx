@@ -6,7 +6,7 @@ import { Answer } from 'src/types/game';
 
 export const QuizList = () => {
   const navigate = useNavigate();
-  const { checkAnswer } = useActions();
+  const { checkAnswer, finishGame } = useActions();
   const { questions, isFinished, activeStep } = useTypedSelector(
     store => store.game,
   );
@@ -16,12 +16,13 @@ export const QuizList = () => {
     if (isGameFinished) navigate('/result');
   }, [activeStep, isGameFinished, navigate]);
 
-  const handleAnswerSelection = React.useCallback(
-    (selectedAnswer: Answer) => {
-      checkAnswer(selectedAnswer.isCorrect);
-    },
-    [checkAnswer],
-  );
+  const handleAnswerSelection = (selectedAnswer: Answer) => {
+    checkAnswer(selectedAnswer.isCorrect);
+
+    if (activeStep + 1 === questions?.length) {
+      finishGame();
+    }
+  };
 
   if (!questions) {
     return <h1>Loading...</h1>;

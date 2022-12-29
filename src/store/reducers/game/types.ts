@@ -5,7 +5,8 @@ export type GameActionEnum =
   | 'INIT_QUESTIONS_FAIL'
   | 'ANSWER_CORRECT'
   | 'ANSWER_WRONG'
-  | 'RESET_GAME';
+  | 'RESET_GAME'
+  | 'FINISH_GAME';
 
 export interface InitQuestionsAction {
   type: 'INIT_QUESTIONS';
@@ -31,9 +32,15 @@ export interface ResetGameAction {
   payload: null;
 }
 
+export interface FinishGameAction {
+  type: 'FINISH_GAME';
+  payload: null;
+}
+
 export type GameAction =
   | InitQuestionsAction
   | InitQuestionsFailAction
   | AnswerCorrectAction
   | AnswerWrongAction
-  | ResetGameAction;
+  | ResetGameAction
+  | FinishGameAction;

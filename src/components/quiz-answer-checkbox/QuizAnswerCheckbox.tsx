@@ -1,27 +1,45 @@
 import React from 'react';
 import { HexagonIcon } from 'src/design-system/icons';
-import { QuizAnswerCheckboxProps } from './QuizAnswerCheckbox.types';
+import {
+  QuizAnswerCheckboxProps,
+  QuizAnswerCheckboxStatus,
+} from './QuizAnswerCheckbox.types';
 import './quizAnswerCheckbox.css';
+import { delay } from 'src/utils/delay';
+import { Answer } from 'src/types';
 
 export const QuizAnswerCheckbox: React.FC<QuizAnswerCheckboxProps> = ({
   answer,
-  checked,
   disabled,
-  status,
   onChange,
+  disableCheckboxes,
 }) => {
+  const [answerStatus, setAnswerStatus] =
+    React.useState<QuizAnswerCheckboxStatus>('default');
+
+  const handleCheckboxChange = async (answer: Answer) => {
+    if (answer.isCorrect) setAnswerStatus('correct');
+    if (!answer.isCorrect) setAnswerStatus('wrong');
+
+    disableCheckboxes();
+    await delay(500);
+
+    setAnswerStatus('default');
+    disableCheckboxes();
+    return onChange(answer.label);
+  };
+
   return (
     <li>
-      <label className={`answer answer--${status}`}>
+      <label className={`answer answer--${answerStatus}`}>
         <input
           className="answer__checkbox"
           disabled={disabled}
-          checked={checked}
           type="checkbox"
-          onChange={() => onChange(answer.label)}
+          onChange={() => handleCheckboxChange(answer)}
         />
         <span className="answer__label">
-          <span className="answer__respond">A</span>
+          <span className="answer__respond">A B C D</span>
           {answer.label}
         </span>
         <HexagonIcon className="answer__rectangle" />
