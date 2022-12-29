@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { QuizAnswer } from 'src/components/quiz-answer';
+import { QuizAnswers } from 'src/components/quiz-answers';
 import { useActions, useTypedSelector } from 'src/hooks';
 import { Answer } from 'src/types/game';
 
@@ -27,14 +27,16 @@ export const QuizList = () => {
   }
 
   return (
-    <ul className="quiz-list">
+    <>
       {!isGameFinished && (
-        <QuizAnswer
-          activeStep={activeStep}
-          question={questions[activeStep]}
-          handleAnswerClick={handleAnswerSelection}
-        />
+        <>
+          <h2 className="quiz-answers__title">{questions[activeStep].label}</h2>
+          <QuizAnswers
+            question={questions[activeStep]}
+            handleAnswerClick={handleAnswerSelection}
+          />
+        </>
       )}
-    </ul>
+    </>
   );
 };

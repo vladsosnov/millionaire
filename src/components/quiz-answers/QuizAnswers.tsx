@@ -1,24 +1,19 @@
 import React from 'react';
 import { QuizAnswerCheckbox } from 'src/components/quiz-answer-checkbox';
 import { Answer, Question } from 'src/types/game';
+import './quizAnswers.css';
 
-interface QuizAnswerProps {
-  activeStep: number;
+interface QuizAnswersProps {
   question: Question;
   handleAnswerClick: (answer: Answer) => void;
 }
 
-export const QuizAnswer: React.FC<QuizAnswerProps> = ({
-  activeStep,
+export const QuizAnswers: React.FC<QuizAnswersProps> = ({
   question,
   handleAnswerClick,
 }) => {
   return (
-    <div>
-      <h2>
-        {activeStep + 1}
-        {question.question}
-      </h2>
+    <ul className="quiz-answers">
       {question.answers.map(answer => (
         <QuizAnswerCheckbox
           key={answer.label}
@@ -29,6 +24,6 @@ export const QuizAnswer: React.FC<QuizAnswerProps> = ({
           onChange={() => handleAnswerClick(answer)}
         />
       ))}
-    </div>
+    </ul>
   );
 };

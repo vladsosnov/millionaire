@@ -11,19 +11,21 @@ export const QuizAnswerCheckbox: React.FC<QuizAnswerCheckboxProps> = ({
   onChange,
 }) => {
   return (
-    <label className={`answer answer--${status}`}>
-      <input
-        className="answer__checkbox"
-        disabled={disabled}
-        checked={checked}
-        type="checkbox"
-        onChange={() => onChange(answer.label)}
-      />
-      <span className="answer__label">
-        <span className="answer__respond">A</span>
-        {answer.label}
-      </span>
-      <HexagonIcon className="answer__rectangle" />
-    </label>
+    <li>
+      <label className={`answer answer--${status}`}>
+        <input
+          className="answer__checkbox"
+          disabled={disabled}
+          checked={checked}
+          type="checkbox"
+          onChange={() => onChange(answer.label)}
+        />
+        <span className="answer__label">
+          <span className="answer__respond">A</span>
+          {answer.label}
+        </span>
+        <HexagonIcon className="answer__rectangle" />
+      </label>
+    </li>
   );
 };

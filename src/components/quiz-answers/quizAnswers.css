@@ -1,0 +1,13 @@
+.quiz-answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 840px;
+  row-gap: 32px;
+}
+
+.quiz-answers__title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 116%;
+  color: var(--dark-color);
+}

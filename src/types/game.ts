@@ -5,7 +5,7 @@ export interface Answer {
 
 export interface Question {
   id: number;
-  question: string;
+  label: string;
   answers: Answer[];
   score: number;
   isMultipleAnswers: boolean;
