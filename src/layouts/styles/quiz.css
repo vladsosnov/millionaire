@@ -22,6 +22,12 @@
   background-color: var(--white-color);
 }
 
+@media (min-width: 1440px) {
+  .quiz-layout__content {
+    align-items: center;
+  }
+}
+
 @media (max-width: 1200px) {
   .quiz-layout__content {
     padding: 3.5% 0;
