@@ -1,0 +1,26 @@
+.quiz-answers__burger-btn {
+  padding: 0 3.5%;
+  margin-left: auto;
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .quiz-answers__burger-btn {
+    display: flex;
+  }
+}
+
+.quiz-answers__title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 116%;
+  color: var(--dark-color);
+}
+
+@media (max-width: 1200px) {
+  .quiz-answers__title {
+    padding: 0 3.5%;
+    align-self: center;
+    text-align: center;
+  }
+}

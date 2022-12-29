@@ -6,7 +6,8 @@ export type GameActionEnum =
   | 'ANSWER_CORRECT'
   | 'ANSWER_WRONG'
   | 'RESET_GAME'
-  | 'FINISH_GAME';
+  | 'FINISH_GAME'
+  | 'TOGGLE_MOBILE_ASIDE';
 
 export interface InitQuestionsAction {
   type: 'INIT_QUESTIONS';
@@ -37,10 +38,16 @@ export interface FinishGameAction {
   payload: null;
 }
 
+export interface ToggleMobileAsideAction {
+  type: 'TOGGLE_MOBILE_ASIDE';
+  payload: null;
+}
+
 export type GameAction =
   | InitQuestionsAction
   | InitQuestionsFailAction
   | AnswerCorrectAction
   | AnswerWrongAction
   | ResetGameAction
-  | FinishGameAction;
+  | FinishGameAction
+  | ToggleMobileAsideAction;

@@ -34,6 +34,13 @@ export const GameActions = {
     });
   },
 
+  toggleMobileAside: () => (dispatch: AppDispatch) => {
+    dispatch({
+      type: 'TOGGLE_MOBILE_ASIDE',
+      payload: null,
+    });
+  },
+
   resetGame: () => (dispatch: AppDispatch) => {
     dispatch({
       type: 'RESET_GAME',

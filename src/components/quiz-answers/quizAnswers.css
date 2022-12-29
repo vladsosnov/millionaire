@@ -5,9 +5,14 @@
   row-gap: 32px;
 }
 
-.quiz-answers__title {
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 116%;
-  color: var(--dark-color);
+@media (max-width: 1200px) {
+  .quiz-answers {
+    max-width: inherit;
+  }
+}
+
+@media (max-width: 800px) {
+  .quiz-answers {
+    grid-template-columns: 1fr;
+  }
 }

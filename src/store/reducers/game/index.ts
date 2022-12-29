@@ -2,6 +2,7 @@ import type { GameAction } from './types';
 
 const initialState = {
   activeStep: 0,
+  isMobileAsideOpened: false,
   isFinished: false,
   questions: null,
 };
@@ -26,6 +27,12 @@ export const gameReducer = (state = initialState, action: GameAction) => {
       return {
         ...state,
         isFinished: true,
+      };
+
+    case 'TOGGLE_MOBILE_ASIDE':
+      return {
+        ...state,
+        isMobileAsideOpened: !state.isMobileAsideOpened,
       };
 
     case 'FINISH_GAME':
