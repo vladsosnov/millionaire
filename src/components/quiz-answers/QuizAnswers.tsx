@@ -20,9 +20,10 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
 
   return (
     <ul className="quiz-answers">
-      {question.answers.map(answer => (
+      {question.answers.map((answer, idx) => (
         <QuizAnswerCheckbox
           key={answer.label}
+          idx={idx}
           answer={answer}
           disabled={disableCheckboxes}
           onChange={() => handleAnswerClick(answer)}

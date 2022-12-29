@@ -7,6 +7,7 @@ export type QuizAnswerCheckboxStatus =
   | 'wrong';
 
 export interface QuizAnswerCheckboxProps {
+  idx: number;
   disabled: boolean;
   answer: Answer;
   onChange: (label: string | number) => void;

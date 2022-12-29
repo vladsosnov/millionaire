@@ -5,10 +5,11 @@ import {
   QuizAnswerCheckboxStatus,
 } from './QuizAnswerCheckbox.types';
 import './quizAnswerCheckbox.css';
-import { delay } from 'src/utils/delay';
+import { delay, numberToLetter } from 'src/utils';
 import { Answer } from 'src/types';
 
 export const QuizAnswerCheckbox: React.FC<QuizAnswerCheckboxProps> = ({
+  idx,
   answer,
   disabled,
   onChange,
@@ -39,7 +40,7 @@ export const QuizAnswerCheckbox: React.FC<QuizAnswerCheckboxProps> = ({
           onChange={() => handleCheckboxChange(answer)}
         />
         <span className="answer__label">
-          <span className="answer__respond">A B C D</span>
+          <span className="answer__respond">{numberToLetter(idx)}</span>
           {answer.label}
         </span>
         <HexagonIcon className="answer__rectangle" />
