@@ -5,24 +5,28 @@ import { useTypedSelector } from 'src/hooks';
 export const QuizAside = () => {
   const { questions, activeStep } = useTypedSelector(store => store.game);
 
-  React.useEffect(() => {
-    console.log('activeStep =', activeStep);
-  }, [activeStep]);
-
   if (!questions) {
     return <h1>Loading...</h1>;
   }
 
   return (
     <>
-      {questions.map(question => (
-        <QuizScore
-          key={question.score}
-          status="default"
-          activeStep={activeStep}
-          score={question.score}
-        />
-      ))}
+      {questions.map((question, idx) => {
+        const status = () => {
+          if (activeStep === idx) return 'active';
+          if (activeStep > idx) return 'inactive';
+
+          return 'default';
+        };
+
+        return (
+          <QuizScore
+            key={question.score}
+            status={status()}
+            score={question.score}
+          />
+        );
+      })}
     </>
   );
 };

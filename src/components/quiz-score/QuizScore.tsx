@@ -1,18 +1,9 @@
 import React from 'react';
 import { SmallHexagonIcon } from 'src/design-system/icons';
+import { QuizScoreProps } from './QuizScore.types';
 import './quiz-score.css';
 
-interface QuizScoreProps {
-  score: number;
-  status: 'default' | 'active' | 'inactive';
-  activeStep: number;
-}
-
-export const QuizScore: React.FC<QuizScoreProps> = ({
-  score,
-  status,
-  activeStep,
-}) => {
+export const QuizScore: React.FC<QuizScoreProps> = ({ score, status }) => {
   const disabled = false;
 
   return (
