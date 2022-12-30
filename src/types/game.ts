@@ -8,5 +8,5 @@ export interface Question {
   label: string;
   answers: Answer[];
   score: number;
-  isMultipleAnswers: boolean;
+  isMultipleAnswers?: boolean;
 }

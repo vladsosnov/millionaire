@@ -7,36 +7,35 @@ import './quiz-list.css';
 import { BurgerMenu } from 'src/design-system/icons';
 
 export const QuizList = () => {
-  const navigate = useNavigate();
   const { toggleMobileAside, checkAnswer, finishGame } = useActions();
+  const navigate = useNavigate();
+
   const { questions, isFinished, activeStep } = useTypedSelector(
     store => store.game,
   );
-  const isGameFinished = isFinished || activeStep === questions?.length;
 
   React.useEffect(() => {
-    if (isGameFinished) navigate('/result');
-  }, [activeStep, isGameFinished, navigate]);
+    if (isFinished) {
+      finishGame();
+      navigate('/result');
+    }
+  }, [activeStep, isFinished]);
 
   const handleAnswerSelection = (selectedAnswer: Answer) => {
     checkAnswer(selectedAnswer.isCorrect);
-
-    if (activeStep + 1 === questions?.length) {
-      finishGame();
-    }
   };
 
   const handleBurgerMenuClick = React.useCallback(() => {
     toggleMobileAside();
   }, [toggleMobileAside]);
 
-  if (!questions) {
+  if (!questions.length) {
     return <h1>Loading...</h1>;
   }
 
   return (
     <>
-      {!isGameFinished && (
+      {!isFinished && (
         <>
           <button
             className="quiz-answers__burger-btn"

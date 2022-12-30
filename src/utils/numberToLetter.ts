@@ -9,6 +9,6 @@ export const numberToLetter = (num: number) => {
     case 3:
       return 'D';
     default:
-      throw new Error('Something went wrong');
+      throw new Error('Something went wrong, please check your input!');
   }
 };

@@ -12,10 +12,11 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
   question,
   handleAnswerClick,
 }) => {
-  const [disableCheckboxes, setDisableCheckboxes] = React.useState(false);
+  const [checkboxDisablerToggle, setCheckboxDisablerToggle] =
+    React.useState(false);
 
-  const handleDisableCheckboxes = () => {
-    setDisableCheckboxes(prev => !prev);
+  const handleCheckboxDisablerToggle = () => {
+    setCheckboxDisablerToggle(prev => !prev);
   };
 
   return (
@@ -25,9 +26,9 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
           key={answer.label}
           idx={idx}
           answer={answer}
-          disabled={disableCheckboxes}
+          disabled={checkboxDisablerToggle}
           onChange={() => handleAnswerClick(answer)}
-          disableCheckboxes={handleDisableCheckboxes}
+          checkboxToggle={handleCheckboxDisablerToggle}
         />
       ))}
     </ul>

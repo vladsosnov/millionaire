@@ -13,7 +13,7 @@ export const DefaultLayout: React.FC<DefaultLayoutProps> = ({
   return (
     <main
       className={`default-layout default-layout--${
-        withBackground && 'gradient'
+        withBackground ? 'gradient' : ''
       }`}
     >
       {children}

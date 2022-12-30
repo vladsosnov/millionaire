@@ -1,21 +1,21 @@
 import React from 'react';
-import { SmallHexagonIcon } from 'src/design-system/icons';
-import { QuizScoreProps } from './QuizScore.types';
+import { HexagonIcon } from 'src/design-system/icons';
 import './quiz-score.css';
 
-export const QuizScore: React.FC<QuizScoreProps> = ({ score, status }) => {
-  const disabled = false;
+type QuizScoreStatuses = 'default' | 'active' | 'inactive';
 
+interface QuizScoreProps {
+  score: number;
+  status: QuizScoreStatuses;
+}
+
+export const QuizScore: React.FC<QuizScoreProps> = ({ score, status }) => {
   return (
     <li>
       <label className={`quiz-score quiz-score--${status}`}>
-        <input
-          className="quiz-score__checkbox"
-          disabled={disabled}
-          type="checkbox"
-        />
+        <input className="quiz-score__checkbox" type="checkbox" />
         <span className="quiz-score__label">{score}</span>
-        <SmallHexagonIcon className="quiz-score__rectangle" />
+        <HexagonIcon className="quiz-score__rectangle" />
       </label>
     </li>
   );

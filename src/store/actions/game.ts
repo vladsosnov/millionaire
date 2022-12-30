@@ -1,4 +1,4 @@
-import { GameService } from 'src/services/game';
+import { GameService } from 'src/services';
 import { Question } from 'src/types/game';
 import { AppDispatch } from '..';
 

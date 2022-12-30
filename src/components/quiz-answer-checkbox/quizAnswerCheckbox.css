@@ -7,12 +7,6 @@
   padding: 16px;
 }
 
-@media (max-width: 480px) {
-  .answer {
-    padding: 10px 0;
-  }
-}
-  
 .answer__rectangle {
   position: relative;
   fill: var(--white-color);
@@ -23,6 +17,10 @@
 }
 
 @media (max-width: 480px) {
+  .answer {
+    padding: 10px 0;
+  }
+
   .answer__rectangle {
     max-height: 56px;
   }
@@ -37,15 +35,6 @@
   transform: translateY(-50%);
   left: 0%;
   background-color: var(--grey-color);
-}
-  
-.answer:hover .answer__rectangle {
-  stroke: var(--orange-color);
-}
-
-.answer:hover::before, 
-.answer:hover::after {
-  background-color: var(--orange-color);
 }
 
 .answer__checkbox + .answer__label {
@@ -74,9 +63,16 @@
   stroke: var(--grey-color);
 }
 
-.answer--default::before,
-.answer--default::after {
-  background-color: var(--grey-color) !important;
+.answer--default::before {
+  background-color: var(--grey-color);
+}
+
+.answer--default:hover .answer__checkbox ~ .answer__rectangle {
+  stroke: var(--orange-color);
+}
+
+.answer--default:hover::before {
+  background-color: var(--orange-color);
 }
 
 .answer--correct .answer__checkbox ~ .answer__rectangle {
@@ -84,9 +80,8 @@
   fill: var(--light-green-color);
 }
 
-.answer--correct::before,
-.answer--correct::after {
-  background-color: var(--green-color) !important;
+.answer--correct::before {
+  background-color: var(--green-color);
 }
 
 .answer--wrong .answer__checkbox ~ .answer__rectangle {
@@ -94,9 +89,8 @@
   fill: var(--light-red-color);
 }
 
-.answer--wrong::before,
-.answer--wrong::after {
-  background-color: var(--red-color) !important;
+.answer--wrong::before {
+  background-color: var(--red-color);
 }
 
 .answer--selected .answer__checkbox ~ .answer__rectangle {
@@ -104,7 +98,10 @@
   fill: var(--light-orange-color);
 }
 
-.answer--selected::before,
-.answer--selected::after {
-  background-color: var(--orange-color) !important;
+.answer--selected::before {
+  background-color: var(--orange-color);
+}
+
+.answer--disabled {
+  pointer-events: none;
 }

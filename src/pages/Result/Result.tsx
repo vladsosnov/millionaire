@@ -8,13 +8,14 @@ import { useActions, useTypedSelector } from 'src/hooks';
 import './result.css';
 
 export const Result = () => {
+  const { resetGame } = useActions();
+  const navigate = useNavigate();
+
   const { questions, activeStep, isFinished } = useTypedSelector(
     store => store.game,
   );
-  const navigate = useNavigate();
-  const { resetGame } = useActions();
 
-  const handleStartClick = React.useCallback(() => {
+  const handleTryAgainClick = React.useCallback(() => {
     navigate(routes.main.path);
     resetGame();
   }, [navigate, resetGame]);
@@ -38,7 +39,7 @@ export const Result = () => {
         <div className="result-page__wrapper">
           <h2 className="result-page__subtitle">Total score:</h2>
           <h1 className="result-page__title">${scores} earned</h1>
-          <Button onClick={handleStartClick}>Try again</Button>
+          <Button onClick={handleTryAgainClick}>Try again</Button>
         </div>
       </div>
     </DefaultLayout>

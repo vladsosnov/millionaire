@@ -2,7 +2,7 @@ import React from 'react';
 import { HexagonIcon } from 'src/design-system/icons';
 import {
   QuizAnswerCheckboxProps,
-  QuizAnswerCheckboxStatus,
+  QuizAnswerCheckboxStatuses,
 } from './QuizAnswerCheckbox.types';
 import './quizAnswerCheckbox.css';
 import { delay, numberToLetter } from 'src/utils';
@@ -13,26 +13,31 @@ export const QuizAnswerCheckbox: React.FC<QuizAnswerCheckboxProps> = ({
   answer,
   disabled,
   onChange,
-  disableCheckboxes,
+  checkboxToggle,
 }) => {
   const [answerStatus, setAnswerStatus] =
-    React.useState<QuizAnswerCheckboxStatus>('default');
+    React.useState<QuizAnswerCheckboxStatuses>('default');
 
   const handleCheckboxChange = async (answer: Answer) => {
     if (answer.isCorrect) setAnswerStatus('correct');
     if (!answer.isCorrect) setAnswerStatus('wrong');
 
-    disableCheckboxes();
+    checkboxToggle();
     await delay(500);
 
     setAnswerStatus('default');
-    disableCheckboxes();
+    checkboxToggle();
+
     return onChange(answer.label);
   };
 
   return (
     <li>
-      <label className={`answer answer--${answerStatus}`}>
+      <label
+        className={`answer answer--${answerStatus} ${
+          disabled ? 'answer--disabled' : ''
+        }`}
+      >
         <input
           className="answer__checkbox"
           disabled={disabled}

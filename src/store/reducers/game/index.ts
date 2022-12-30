@@ -4,7 +4,7 @@ const initialState = {
   activeStep: 0,
   isMobileAsideOpened: false,
   isFinished: false,
-  questions: null,
+  questions: [],
 };
 
 export const gameReducer = (state = initialState, action: GameAction) => {
@@ -21,6 +21,8 @@ export const gameReducer = (state = initialState, action: GameAction) => {
       return {
         ...state,
         activeStep: state.activeStep + 1,
+        isFinished:
+          state.activeStep + 1 === state.questions.length ? true : false,
       };
 
     case 'ANSWER_WRONG':
