@@ -1,6 +1,7 @@
 {
   "name": "millionaire",
   "version": "0.1.0",
+  "homepage": "https://vladsosnov.github.io/millionaire",
   "private": true,
   "dependencies": {
     "@redux-devtools/extension": "^3.2.3",
@@ -16,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "test": "jest --bail --maxWorkers=1",
     "commitlint": "commitlint --edit",
