@@ -9,7 +9,7 @@ import 'src/assets/styles/shared.css';
 export const App = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/millionaire">
         <AppRoutes />
       </BrowserRouter>
     </Provider>
